@@ -47,6 +47,7 @@ int main() {
 				CNumber = rand() % multiplier + 1;
 				printf("Computer guess that number is %d Is it true?\n", CNumber);
 				scanf_s("%c", &comparison, 1);
+				comparison = getchar();
 				if (comparison == greater) {
 					if (multiplier < HNumber) {
 						multiplier++;
@@ -56,7 +57,7 @@ int main() {
 				else if (comparison == less) {
 					multiplier--;
 					count++;
-					printf("%d", multiplier);
+					//printf("%d", multiplier);
 				}
 				else if (comparison == equally) {
 					printf("Game over\n Computer is right\n");
