@@ -2,11 +2,15 @@
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
+#include <string.h>
 
 
 int main() {
-	int Variant = 0, HNumber = 0, CNumber = 0, accuracy = 0, win = 0, count = 0, multiplier = 1000;
+	int Variant, HNumber, CNumber, accuracy = 0, win = 0, count = 0, multiplier = 1000;
 	char comparison;
+	char greater = '>';
+	char less = '<';
+	char equally = '=';
 	while (accuracy != 1) {
 		printf("Please, enter variant of game(1 or 2): ");
 		scanf_s("%d", &Variant);
@@ -41,19 +45,20 @@ int main() {
 			while (win != 1) {
 				srand(time(NULL));
 				CNumber = rand() % multiplier + 1;
-				printf("Computer guess that number is %d\n Is it true?\n", CNumber);
-				scanf_s("%c", &comparison);
-				if (comparison == '>') {
+				printf("Computer guess that number is %d Is it true?\n", CNumber);
+				scanf_s("%c", &comparison, 1);
+				if (comparison == greater) {
 					if (multiplier < HNumber) {
 						multiplier++;
 					}
 					count++;
 				}
-				else if (comparison == '<') {
+				else if (comparison == less) {
 					multiplier--;
 					count++;
+					printf("%d", multiplier);
 				}
-				else if (comparison == '=') {
+				else if (comparison == equally) {
 					printf("Game over\n Computer is right\n");
 					count++;
 					win = 1;
