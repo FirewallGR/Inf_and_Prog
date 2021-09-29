@@ -47,7 +47,9 @@ int main() {
 				CNumber = rand() % multiplier + 1;
 				printf("Computer guess that number is %d Is it true?\n", CNumber);
 				scanf_s("%c", &comparison, 1);
+				printf("%c\n", comparison);
 				comparison = getchar();
+				printf("%c\n", comparison);
 				if (comparison == greater) {
 					if (multiplier < HNumber) {
 						multiplier++;
