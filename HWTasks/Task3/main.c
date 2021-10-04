@@ -20,7 +20,7 @@ int in(int suspect, int *array, int size) {
 //This function generates number of a given size
 int createNumber(int n) {
 	int *array = NULL;
-	int result = 0, x, cache = 0, flag = 0;
+	int result = 0, x;
 
 	array = malloc(sizeof(int) * n);
 
@@ -103,7 +103,7 @@ int main() {
 		case 2:
 			isError = 1;
 			CNumber = createNumber(n);
-			printf("%d\n", CNumber);
+			//printf("%d\n", CNumber);
 			
 			do {
 				do {
