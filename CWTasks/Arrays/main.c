@@ -1,5 +1,6 @@
 // COPYRIGHT 2021 @MEOWMURE
 #include <stdio.h>
+#include <math.h>
 #define SIZE 10
 
 
@@ -21,7 +22,7 @@ int main() {
 		else {
 			multipNotMod2 *= array[i];
 		}
-		if (array[i] % 2 != 0) {
+		if (abs(array[i]) % 2 != 0) {
 			multipZn *= array[i];
 		}
 	}
