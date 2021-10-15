@@ -98,60 +98,19 @@ int main() {
 		printf("Enter the length of number(from 2 to 5): ");
 		scanf_s("%d", &n);
 
-		switch (n)
-		{
-		case 2:
-			isError = 1;
-			CNumber = createNumber(n);
-			//printf("%d\n", CNumber);
-			
-			do {
-				do {
-					scanf_s("%d", &HNumber);
-				} while (accuracy(HNumber, n) != 1);
-			} while (game(CNumber, HNumber, n) != 1);
-			
-			break;
-		case 3:
-			isError = 1;
-			CNumber = createNumber(n);
-			printf("%d\n", CNumber);
+        if (n >= 2 && n <= 5) {
+            isError = 1;
+            CNumber = createNumber(n);
+            printf("%d\n", CNumber);
 
-			do {
-				do {
-					scanf_s("%d", &HNumber);
-				} while (accuracy(HNumber, n) != 1);
-			} while (game(CNumber, HNumber, n) != 1);
-
-			break;
-		case 4:
-			isError = 1;
-			CNumber = createNumber(n);
-			printf("%d\n", CNumber);
-
-			do {
-				do {
-					scanf_s("%d", &HNumber);
-				} while (accuracy(HNumber, n) != 1);
-			} while (game(CNumber, HNumber, n) != 1);
-
-			break;
-		case 5:
-			isError = 1;
-			CNumber = createNumber(n);
-			printf("%d\n", CNumber);
-
-			do {
-				do {
-					scanf_s("%d", &HNumber);
-				} while (accuracy(HNumber, n) != 1);
-			} while (game(CNumber, HNumber, n) != 1);
-
-			break;
-		default:
-			printf("You enter incorrect size\n Please, try again\n");
-			break;
-		}
+            do {
+                do {
+                    scanf_s("%d", &HNumber);
+                } while (accuracy(HNumber, n) != 1);
+            } while (game(CNumber, HNumber, n) != 1);
+        } else {
+            printf("You enter incorrect size\n Please, try again\n");
+        }
 	}
 	
 	return 0;
