@@ -59,11 +59,22 @@ int main() {
 		printf("%d ", array[i]);
 	}
 
-	for (int i = 0; i < SIZE / 2; i++) {
-		tmp = array[i];
-		array[i] = array[i+SIZE/2];
-		array[i+SIZE/2] = tmp;
+	if (SIZE % 2 == 0) {
+		for (int i = 0; i < SIZE / 2; i++) {
+			tmp = array[i];
+			array[i] = array[i + SIZE / 2];
+			array[i + SIZE / 2] = tmp;
+		}
 	}
+	else {
+		for (int i = 0; i < (SIZE - 1) / 2; i++) {
+			tmp = array[i];
+			array[i] = array[i + (SIZE - 1) / 2];
+			array[i + (SIZE - 1) / 2] = tmp;
+		}
+	}
+
+	
 
 	printf("\narray after:\n");
 
